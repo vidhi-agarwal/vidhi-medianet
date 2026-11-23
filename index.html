@@ -18,6 +18,20 @@ Error generating stack: `+e.message+`
 </head>
 <body>
 <div id="root"></div>
+<style id="rc-pill-css">
+/* Demo "skip ahead" pill: bigger, high-contrast, pulsing so first-time viewers find it */
+.mb .mb-tip{top:40px;padding:12px 18px 12px 12px;gap:12px;font-size:16px;font-weight:700;border-radius:14px;background:#e0287a;color:#fff;cursor:pointer;
+  box-shadow:0 0 0 3px #fff,0 10px 30px rgba(224,40,122,.55);animation:.4s cubic-bezier(.22,1,.36,1) both tip-in,rc-pill 1.6s ease-in-out .4s infinite;transition:transform .15s}
+.mb .mb-tip:hover{transform:translateY(-2px) scale(1.03)}
+.mb .mb-tip:before{background:#e0287a;width:14px;height:14px;top:-7px;box-shadow:-2px -2px 0 1px #fff}
+.mb .mb-tip:after{content:"Click to see what happens next";position:absolute;top:calc(100% + 8px);right:4px;font-size:12px;font-weight:600;color:#fff;background:rgba(20,10,35,.75);padding:4px 10px;border-radius:999px;white-space:nowrap}
+.mb .mb-tip .ob-demo-tag{background:#fff;color:#e0287a;height:24px;font-size:0;padding:0 8px;border-radius:6px}
+.mb .mb-tip .ob-demo-tag:after{content:"Next";font-size:12px;font-weight:800;letter-spacing:.06em}
+.mb .mb-tip i{color:#fff;font-size:20px;animation:rc-nudge 1.6s ease-in-out infinite}
+@keyframes rc-pill{50%{box-shadow:0 0 0 3px #fff,0 0 0 10px rgba(224,40,122,.25),0 10px 36px rgba(224,40,122,.75)}}
+@keyframes rc-nudge{50%{transform:translateX(4px)}}
+@media (prefers-reduced-motion:reduce){.mb .mb-tip,.mb .mb-tip i{animation:none}}
+</style>
 <style id="rc-spot-css">
 #rc-spot{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0;transition:opacity .25s ease}
 #rc-spot.on{opacity:1}
